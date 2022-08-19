@@ -18,9 +18,30 @@
 import React from "react";
 import PanelHeader from "../components/PanelHeader/PanelHeader";
 import {Card, CardBody, CardHeader, Col, Row} from "reactstrap";
+import axios from 'axios';
 
 
-const Board = () => {
+
+
+const Board1 = () => {
+    const BoardList = async () => {
+        axios.get("https://salcho.cf:3000/board/list")
+            .then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+            // 오류발생시 실행
+        }).then(function () {
+            // 항상 실행
+        });
+
+        // async await 함수를 사용할 때,
+
+        try {
+            const data = await axios.get("url");
+        } catch {
+            // 오류 발생시 실행
+        }
+    }
   return (
       <>
         <PanelHeader size="sm" />
@@ -31,28 +52,11 @@ const Board = () => {
                 <CardHeader>
                   <h5 className="title">SAlCHO 게시판 관리</h5>
                   <p className="category">
-                    Handcrafted by our friends from{" "}
+                    Salcho Board 관리자 페이지 입니다.
                   </p>
                 </CardHeader>
                 <CardBody>
-                    <table>
-                        <thead>
-                            <th>1</th>
-                            <th>2</th>
-                            <th>3</th>
-                            <th>4</th>
-                            <th>5</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
                 </CardBody>
               </Card>
             </Col>
@@ -63,4 +67,4 @@ const Board = () => {
 
 }
 
-export default Board;
+export default Board1;

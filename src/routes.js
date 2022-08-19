@@ -24,7 +24,7 @@ import Maps from "views/Maps.js";
 import Upgrade from "views/Upgrade.js";
 import UserPage from "views/UserPage.js";
 import Main from "views/Main.js";
-import Board from "views/Board.js";
+import Board from "views/Board/Board.js";
 
 let adminRoute = [
   {
@@ -40,8 +40,7 @@ let adminRoute = [
     icon: "design_bullet-list-67",
     component: Board,
     layout: "/admin"
-  }
-  /*
+  },
   {
    path: "/dashboard",
    name: "Dashboard",
@@ -99,6 +98,5 @@ let adminRoute = [
    component: Upgrade,
    layout: "/admin"
  }
-*/
 ];
 export default adminRoute;

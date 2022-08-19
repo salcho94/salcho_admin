@@ -17,15 +17,24 @@
 */
 import React from "react";
 import PanelHeader from "../components/PanelHeader/PanelHeader";
+import {Card, CardBody, CardHeader, Col, Row} from "reactstrap";
 import {Line} from "react-chartjs-2";
 import {dashboardPanelChart} from "../variables/charts";
-import {Card, CardBody, CardHeader, Col, Row} from "reactstrap";
+import MainHeader from "../components/PanelHeader/MainHeader";
 
 
 const Main = () => {
   return (
       <>
-        <PanelHeader size="sm" />
+        <MainHeader
+            size="md"
+            content={
+              <Line
+                  data={dashboardPanelChart.data}
+                  options={dashboardPanelChart.options}
+              />
+            }
+        />
         <div className="content">
           <Row>
             <Col md={12}>
